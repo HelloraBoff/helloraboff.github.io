@@ -149,3 +149,29 @@ function handleContact(e) {
   return false;
 }
 window.handleContact = handleContact;
+
+// ===== Cards clicáveis para abrir o Medium =====
+(function enableCardOpenOnClick() {
+  const cards = document.querySelectorAll('.card[data-link]');
+  cards.forEach(card => {
+    const url = card.getAttribute('data-link');
+    if (!url) return;
+    card.style.cursor = 'pointer';
+
+    // clique (evita conflitos com botões/links internos)
+    card.addEventListener('click', (e) => {
+      const interactive = e.target.closest('a, button');
+      if (interactive) return;
+      window.open(url, '_blank', 'noopener');
+    });
+
+    // acessível via teclado
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.open(url, '_blank', 'noopener');
+      }
+    });
+  });
+})();
+
