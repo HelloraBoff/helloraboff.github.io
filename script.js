@@ -1,5 +1,4 @@
-// ===== Util: tema claro/escuro com persistência
-const root = document.documentElement;
+// ===== Tema claro/escuro com persistência
 const body = document.body;
 const themeToggle = document.getElementById('themeToggle');
 const storedTheme = localStorage.getItem('theme-pref');
@@ -8,13 +7,11 @@ function setTheme(mode) {
   body.setAttribute('data-theme', mode);
   localStorage.setItem('theme-pref', mode);
 }
-
 if (storedTheme) {
   setTheme(storedTheme);
 } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   setTheme('dark');
 }
-
 themeToggle?.addEventListener('click', () => {
   const current = body.getAttribute('data-theme');
   setTheme(current === 'dark' ? 'light' : 'dark');
@@ -27,8 +24,6 @@ navToggle?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
-
-// Fecha menu ao clicar em um link (mobile)
 nav?.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => nav.classList.remove('open'));
 });
@@ -63,7 +58,6 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
 document.querySelectorAll('.in-observe').forEach(el => observer.observe(el));
 
 // ===== Tilt 3D leve nos cards
@@ -79,9 +73,7 @@ if (!prefersReduced) {
       const ry = ((x / r.width) - 0.5) * 2 * maxTilt;
       card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 }
 
@@ -94,21 +86,18 @@ chips.forEach(chip => {
     chip.classList.add('is-active');
     const filter = chip.dataset.filter;
     cards.forEach(card => {
-      if (filter === 'all') { card.style.display = ''; return; }
-      const cats = card.dataset.category.split(' ');
-      card.style.display = cats.includes(filter) ? '' : 'none';
+      const cats = (card.dataset.category || '').split(' ').filter(Boolean);
+      card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
     });
   });
 });
 
 // ===== Carrossel de depoimentos
-const carousels = document.querySelectorAll('[data-carousel]');
-carousels.forEach(caro => {
+document.querySelectorAll('[data-carousel]').forEach(caro => {
   const track = caro.querySelector('.carousel-track');
   const prev = caro.querySelector('.prev');
   const next = caro.querySelector('.next');
   let index = 0;
-
   function go(i) {
     const total = track.children.length;
     index = (i + total) % total;
@@ -116,8 +105,6 @@ carousels.forEach(caro => {
   }
   prev?.addEventListener('click', () => go(index - 1));
   next?.addEventListener('click', () => go(index + 1));
-
-  // Teclado
   caro.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') go(index - 1);
     if (e.key === 'ArrowRight') go(index + 1);
@@ -145,7 +132,7 @@ function handleContact(e) {
   const assunto = encodeURIComponent(`Contato Portfólio — ${nome}`);
   const corpo = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\n\n${msg}`);
   // Substitua pelo seu email
-  window.location.href = `mailto:helloraboff@gmail.com?subject=${assunto}&body=${corpo}`;
+  window.location.href = `mailto:hellorabrito@gmail.com?subject=${assunto}&body=${corpo}`;
   return false;
 }
 window.handleContact = handleContact;
@@ -158,14 +145,12 @@ window.handleContact = handleContact;
     if (!url) return;
     card.style.cursor = 'pointer';
 
-    // clique (evita conflitos com botões/links internos)
     card.addEventListener('click', (e) => {
       const interactive = e.target.closest('a, button');
-      if (interactive) return;
+      if (interactive) return; // mantém botões/links internos
       window.open(url, '_blank', 'noopener');
     });
 
-    // acessível via teclado
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -174,4 +159,3 @@ window.handleContact = handleContact;
     });
   });
 })();
-
