@@ -1,330 +1,244 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hellora Boff — UX/UI Designer</title>
-  <meta name="description" content="Portfólio de UX/UI Designer da Lola — estudos de caso com resultados, processo claro, protótipos e sistemas de design." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0C6CF0" />
+/* Reset e tokens básicos */
+* { box-sizing: border-box; }
+html:focus-within { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+               Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans",
+               "Apple Color Emoji","Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Hellora Boff — UX/UI Designer" />
-  <meta property="og:description" content="Estudos de caso com resultado, processo claro e protótipos de alta fidelidade." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://helloraboff.github.io/" />
-  <meta property="og:image" content="og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f6f8fb;
+  --text: #0b1220;
+  --muted: #5b6578;
+  --brand: #0C6CF0;
+  --brand-2: #8A5CF6;
+  --border: #e4e8f0;
+  --card: #ffffff;
+  --focus: #ffb703;
+  --shadow: 0 10px 30px rgba(16,24,40,.08);
+}
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Hellora Boff",
-    "jobTitle":"UX/UI Designer",
-    "url":"https://helloraboff.github.io/",
-    "sameAs":[
-      "https://www.linkedin.com/in/helloraboff",
-      "https://github.com/helloraboff",
-      "https://dribbble.com/SEU_DRIBBBLE"
-    ]
-  }
-  </script>
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --bg-alt: #121a2c;
+  --text: #e8eefb;
+  --muted: #a3b0c7;
+  --brand: #4aa8ff;
+  --brand-2: #a694ff;
+  --border: #27334a;
+  --card: #0f172a;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
 
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body data-theme="light">
-  <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
+:root { color-scheme: light dark; }
 
-  <header class="site-header" id="topo" role="banner">
-    <div class="container header-inner">
-      <div class="brand">
-        <span class="logo" aria-hidden="true">◎</span>
-        <span class="brand-text">Hellora Boff</span>
-        <span class="role">UX/UI Designer</span>
-      </div>
+/* Acessibilidade */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip-link {
+  position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed; left: 1rem; top: 1rem; z-index: 9999; width: auto; height: auto;
+  background: var(--brand); color: #fff; padding: .5rem .75rem; border-radius: .5rem;
+}
 
-      <button class="nav-toggle" aria-controls="menu" aria-expanded="false" aria-label="Menu">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
+/* Layout utilitários */
+.container { width: min(1120px, 92vw); margin-inline: auto; }
+.section { padding: clamp(2rem, 4vw, 4rem) 0; }
+.section.alt { background: var(--bg-alt); }
+.section-head { margin-bottom: 1.25rem; }
+.section-head h2 { margin: 0 0 .25rem; font-size: clamp(1.5rem, 2.5vw, 2rem); }
+.section-head p { margin: 0; color: var(--muted); }
 
-      <nav id="menu" class="site-nav" role="navigation" aria-label="Principal">
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#processo">Processo</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li>
-            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-              <span class="sun">☀️</span><span class="moon">🌙</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: color-mix(in oklab, var(--bg), transparent 0%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(1.2) blur(8px);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+.brand { display: grid; grid-template-columns: auto 1fr; gap: .25rem .5rem; align-items: center; }
+.logo { display:inline-grid; place-items:center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,var(--brand),var(--brand-2)); color: #fff; font-size: 18px; }
+.brand-text { font-weight: 700; }
+.role { grid-column: 2; color: var(--muted); font-size: .9rem; }
 
-  <main id="conteudo">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 class="headline">
-            Eu projeto experiências <span class="gradient">claras, inclusivas</span> e que geram resultado.
-          </h1>
-          <p class="subhead">
-            Pesquisa → Estratégia → Fluxos → UI → Prototipagem.  
-            De zero a um, ou de bom a excelente.
-          </p>
-          <div class="cta">
-            <a href="#projetos" class="btn primary">Ver projetos</a>
-            <a href="curriculo.pdf" class="btn ghost" target="_blank" rel="noopener">Baixar CV</a>
-          </div>
+/* Nav */
+.site-nav ul { display: flex; gap: .5rem; align-items: center; margin: 0; padding: 0; list-style: none; }
+.site-nav a { display: inline-block; padding: .5rem .75rem; color: var(--text); text-decoration: none; border-radius: .5rem; }
+.site-nav a:hover { background: var(--bg-alt); }
+.nav-toggle { display: none; background: none; border: 0; }
+.hamburger, .hamburger::before, .hamburger::after {
+  display:block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; position: relative;
+}
+.hamburger::before, .hamburger::after { content:""; position: absolute; left: 0; }
+.hamburger::before { top: -6px; } .hamburger::after { top: 6px; }
 
-          <div class="stats" aria-label="Métricas">
-            <div class="stat"><span class="stat-num" data-countto="92">0</span><span class="stat-label">NPS médio</span></div>
-            <div class="stat"><span class="stat-num" data-countto="38">0</span><span class="stat-label">% ↑ conversão</span></div>
-            <div class="stat"><span class="stat-num" data-countto="6">0</span><span class="stat-label">Case studies</span></div>
-          </div>
-        </div>
+.theme-toggle {
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  padding: .4rem .6rem; border-radius: .6rem; cursor: pointer;
+}
+.theme-toggle .sun { display: inline; } .theme-toggle .moon { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: none; } 
+[data-theme="dark"] .theme-toggle .moon { display: inline; }
 
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 600 500" class="blob">
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--brand)" />
-              <stop offset="100%" stop-color="var(--brand-2)" />
-            </linearGradient></defs>
-            <path d="M467,308Q432,366,377,413Q322,460,251,449Q180,438,135,381Q90,324,64,252Q38,180,87,121Q135,62,210,55Q285,48,343,90Q400,132,452,181Q504,230,491,305Q478,380,467,308Z" fill="url(#g1)"></path>
-          </svg>
-        </div>
-      </div>
-    </section>
+/* Hero */
+.hero { position: relative; padding: clamp(2rem, 5vw, 5rem) 0; }
+.hero-inner { display: grid; gap: 2rem; grid-template-columns: 1.2fr .8fr; align-items: center; }
+.headline { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; line-height: 1.15; }
+.gradient { background: linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.subhead { color: var(--muted); margin: 0 0 1rem; }
+.cta { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.btn {
+  --bg-btn: var(--brand);
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+  padding: .75rem 1rem; border-radius: .75rem; border: 1px solid transparent; text-decoration: none; cursor: pointer;
+  color: #fff; background: var(--bg-btn); box-shadow: var(--shadow);
+}
+.btn.primary:hover { filter: brightness(.95); }
+.btn.ghost { --bg-btn: transparent; color: var(--text); border-color: var(--border); box-shadow: none; }
+.btn.ghost:hover { background: var(--bg-alt); }
+.btn.small { padding: .5rem .75rem; font-size: .9rem; }
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Projetos em destaque</h2>
-          <p>Estudos de caso com problema, processo, solução e impacto.</p>
-        </div>
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.25rem; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: .75rem 1rem; text-align: center; }
+.stat-num { font-weight: 800; font-size: 2rem; display: block; }
+.stat-label { color: var(--muted); font-size: .9rem; }
+.hero-art .blob { width: 100%; max-width: 460px; animation: float 8s ease-in-out infinite; filter: drop-shadow(0 12px 35px rgba(0,0,0,.17)); }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-        <div class="filters" role="tablist" aria-label="Filtros de projetos">
-          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-          <button class="chip" data-filter="produto" role="tab">Produto</button>
-          <button class="chip" data-filter="pesquisa" role="tab">Pesquisa</button>
-          <button class="chip" data-filter="visual" role="tab">Visual</button>
-          <button class="chip" data-filter="acessibilidade" role="tab">Acessibilidade</button>
-        </div>
+/* Grid de projetos */
+.filters { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0 1.25rem; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--text); padding: .4rem .65rem; border-radius: 999px; cursor: pointer; }
+.chip.is-active { background: var(--text); color: var(--bg); }
 
-        <div class="grid projects">
-          <!-- Card 1 — SEU CASE DO MEDIUM -->
-          <article class="card tilt in-observe"
-                   data-category="produto acessibilidade"
-                   data-link="https://medium.com/@hellorabrito/da-burocracia-%C3%A0-confian%C3%A7a-redesenhando-o-sistema-de-reembolso-na-caixa-seguradora-e9238be7a3c0"
-                   tabindex="0"
-                   aria-label="Abrir estudo de caso no Medium: Redesenhando o sistema de reembolso (Caixa Seguradora)">
-            <div class="thumb"><div class="thumb-inset">
-              <svg viewBox="0 0 400 240" class="thumb-svg">
-                <rect width="400" height="240" rx="16" class="svg-bg"></rect>
-                <g class="bars">
-                  <rect x="32" y="48" width="160" height="18" rx="4"></rect>
-                  <rect x="32" y="82" width="220" height="18" rx="4"></rect>
-                  <rect x="32" y="116" width="190" height="18" rx="4"></rect>
-                  <rect x="32" y="150" width="260" height="18" rx="4"></rect>
-                </g>
-              </svg>
-            </div></div>
-            <div class="card-body">
-              <h3>Da burocracia à confiança</h3>
-              <p>Redesenho do sistema de reembolso na Caixa Seguradora: jornada simplificada e mais transparente.</p>
-              <ul class="badges"><li>Pesquisa</li><li>UX Writing</li><li>Acessibilidade</li></ul>
-              <div class="actions">
-                <a href="https://medium.com/@hellorabrito/da-burocracia-%C3%A0-confian%C3%A7a-redesenhando-o-sistema-de-reembolso-na-caixa-seguradora-e9238be7a3c0" class="btn small" target="_blank" rel="noopener">Estudo de caso</a>
-                <a href="#" class="btn small ghost" target="_blank" rel="noopener">Protótipo</a>
-              </div>
-            </div>
-          </article>
+.grid.projects { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; overflow: clip; transition: transform .2s ease, box-shadow .2s ease; }
+.card:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.thumb { aspect-ratio: 16 / 9; background: var(--bg-alt); }
+.thumb-inset { width: 100%; height: 100%; display: grid; place-items: center; }
+.thumb-svg { width: 92%; height: auto; }
+.thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; } /* imagem real no card */
+.svg-bg { fill: color-mix(in oklab, var(--brand), var(--brand-2) 25%); opacity: .15; }
+.svg-bg-2 { fill: color-mix(in oklab, var(--brand-2), var(--brand) 25%); opacity: .15; }
+.svg-bg-3 { fill: color-mix(in oklab, var(--brand), #00c2a8 25%); opacity: .15; }
+.svg-bg-4 { fill: color-mix(in oklab, #ff7a59, var(--brand) 25%); opacity: .15; }
+.bars rect, .bars circle { fill: currentColor; opacity: .25; }
 
-          <!-- Card 2 -->
-          <article class="card tilt in-observe"
-                   data-category="pesquisa produto"
-                   tabindex="0" aria-label="Onboarding orientado por JTBD">
-            <div class="thumb"><div class="thumb-inset">
-              <svg viewBox="0 0 400 240" class="thumb-svg">
-                <rect width="400" height="240" rx="16" class="svg-bg-2"></rect>
-                <g class="bars">
-                  <circle cx="100" cy="120" r="56"></circle>
-                  <rect x="186" y="84" width="180" height="24" rx="4"></rect>
-                  <rect x="186" y="120" width="140" height="24" rx="4"></rect>
-                </g>
-              </svg>
-            </div></div>
-            <div class="card-body">
-              <h3>Onboarding orientado por JTBD</h3>
-              <p>Entrevistas, priorização por Jobs To Be Done e protótipos validados.</p>
-              <ul class="badges"><li>JTBD</li><li>Testes</li><li>Growth</li></ul>
-              <div class="actions">
-                <a href="#" class="btn small" target="_blank" rel="noopener">Estudo de caso</a>
-                <a href="#" class="btn small ghost" target="_blank" rel="noopener">Wireframes</a>
-              </div>
-            </div>
-          </article>
+.card-body { padding: 1rem; display: grid; gap: .5rem; }
+.card-body h3 { margin: 0; font-size: 1.1rem; line-height: 1.25;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  hyphens: auto; overflow-wrap: anywhere;
+}
+.card-body p { margin: 0; color: var(--muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.badges { display: flex; gap: .4rem; list-style: none; padding: 0; margin: .25rem 0 0; flex-wrap: wrap; }
+.badges li { border: 1px dashed var(--border); color: var(--muted); padding: .15rem .5rem; border-radius: .4rem; font-size: .85rem; }
+.actions { margin-top: .5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
 
-          <!-- Card 3 -->
-          <article class="card tilt in-observe"
-                   data-category="visual produto"
-                   tabindex="0" aria-label="Design System escalável">
-            <div class="thumb"><div class="thumb-inset">
-              <svg viewBox="0 0 400 240" class="thumb-svg">
-                <rect width="400" height="240" rx="16" class="svg-bg-3"></rect>
-                <g class="bars">
-                  <rect x="36" y="48" width="328" height="36" rx="8"></rect>
-                  <rect x="36" y="108" width="328" height="16" rx="6"></rect>
-                  <rect x="36" y="132" width="328" height="16" rx="6"></rect>
-                  <rect x="36" y="156" width="250" height="16" rx="6"></rect>
-                </g>
-              </svg>
-            </div></div>
-            <div class="card-body">
-              <h3>Design System escalável</h3>
-              <p>Tokens, temas e bibliotecas de componentes; documentação para dev‑handoff.</p>
-              <ul class="badges"><li>Figma</li><li>Tokens</li><li>Docs</li></ul>
-              <div class="actions">
-                <a href="#" class="btn small" target="_blank" rel="noopener">Guia & Tokens</a>
-                <a href="#" class="btn small ghost" target="_blank" rel="noopener">Componentes</a>
-              </div>
-            </div>
-          </article>
+/* Timeline (processo) */
+.timeline { list-style: none; padding: 0; margin: 1rem 0 0; position: relative; }
+.timeline::before { content:""; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline li { position: relative; padding-left: 52px; margin: 1rem 0; }
+.timeline .step {
+  position: absolute; left: 6px; top: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--brand); color: #fff; display: grid; place-items: center; font: 600 12px/1 system-ui;
+  transform: translateY(4px);
+}
+.timeline .content h3 { margin: 0 0 .2rem; }
+.timeline .content p { margin: 0; color: var(--muted); }
 
-          <!-- Card 4 -->
-          <article class="card tilt in-observe"
-                   data-category="acessibilidade visual"
-                   tabindex="0" aria-label="App inclusivo — contraste & navegação">
-            <div class="thumb"><div class="thumb-inset">
-              <svg viewBox="0 0 400 240" class="thumb-svg">
-                <rect width="400" height="240" rx="16" class="svg-bg-4"></rect>
-                <g class="bars">
-                  <rect x="60" y="60" width="280" height="24" rx="4"></rect>
-                  <rect x="60" y="100" width="220" height="24" rx="4"></rect>
-                  <rect x="60" y="140" width="260" height="24" rx="4"></rect>
-                </g>
-              </svg>
-            </div></div>
-            <div class="card-body">
-              <h3>App inclusivo: contraste & navegação</h3>
-              <p>Conformidade AA, foco visível e navegação por teclado/atalhos.</p>
-              <ul class="badges"><li>WCAG 2.2</li><li>Focus</li><li>QA</li></ul>
-              <div class="actions">
-                <a href="#" class="btn small" target="_blank" rel="noopener">Checklist</a>
-                <a href="#" class="btn small ghost" target="_blank" rel="noopener">Relatório</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+/* Depoimentos */
+.carousel { position: relative; }
+.carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow: hidden; scroll-behavior: smooth; }
+.testimonial { margin: 0; padding: 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: .75rem; }
+.testimonial p { font-size: 1.05rem; }
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+}
+.carousel-btn:hover { background: var(--bg-alt); }
+.carousel-btn.prev { left: -6px; } .carousel-btn.next { right: -6px; }
 
-    <!-- PROCESSO -->
-    <section id="processo" class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Processo</h2>
-          <p>Clareza, colaboração e ciclos rápidos.</p>
-        </div>
-        <ol class="timeline">
-          <li class="in-observe"><div class="step">1</div><div class="content"><h3>Descoberta</h3><p>Entrevistas, análise de dados e definição de sucesso.</p></div></li>
-          <li class="in-observe"><div class="step">2</div><div class="content"><h3>Definição</h3><p>Problema, métricas e hipóteses priorizadas.</p></div></li>
-          <li class="in-observe"><div class="step">3</div><div class="content"><h3>Ideação & Protótipos</h3><p>Fluxos, wireframes e protótipos testáveis.</p></div></li>
-          <li class="in-observe"><div class="step">4</div><div class="content"><h3>Teste & Iteração</h3><p>Testes com usuários, acessibilidade e ajustes.</p></div></li>
-          <li class="in-observe"><div class="step">5</div><div class="content"><h3>Entrega & Medição</h3><p>Handoff, documentação e métricas.</p></div></li>
-        </ol>
-      </div>
-    </section>
+/* Sobre */
+.about { display: grid; gap: 2rem; grid-template-columns: 1.1fr .9fr; align-items: center; }
+.about .list { color: var(--muted); }
+.token-swatch { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+.token-swatch div { height: 72px; border-radius: .75rem; display: grid; place-items: end start; padding: .5rem; color: #fff; font-size: .8rem; }
+.token-swatch div:nth-child(1){ background: var(--brand); }
+.token-swatch div:nth-child(2){ background: var(--brand-2); }
+.token-swatch div:nth-child(3){ background: var(--bg-alt); color: var(--text); }
+.token-swatch div:nth-child(4){ background: var(--text); }
 
-    <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Depoimentos</h2>
-          <p>Confiança de times de produto e engenharia.</p>
-        </div>
+/* Contato */
+.contact { display: grid; gap: .75rem; max-width: 760px; }
+.form-row { display: grid; gap: .35rem; }
+input, textarea {
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--border); border-radius: .6rem; padding: .8rem;
+}
+input:focus-visible, textarea:focus-visible { outline-color: var(--focus); }
+.form-actions { display: flex; align-items: center; gap: .75rem; }
+.form-hint { color: var(--muted); font-size: .9rem; }
+.social { display: flex; gap: .75rem; padding: 0; list-style: none; margin: 1rem 0 0; }
+.social a { color: var(--text); border: 1px solid var(--border); border-radius: .6rem; padding: .5rem .75rem; text-decoration: none; }
+.social a:hover { background: var(--bg-alt); }
 
-        <div class="carousel" data-carousel>
-          <button class="carousel-btn prev" aria-label="Anterior">‹</button>
-          <div class="carousel-track">
-            <blockquote class="testimonial"><p>“Elevou nosso app a outro nível. Métricas subiram, suporte caiu.”</p><footer>— PO, Fintech</footer></blockquote>
-            <blockquote class="testimonial"><p>“Sistema de design acessível e escalável.”</p><footer>— Eng. Front‑end</footer></blockquote>
-            <blockquote class="testimonial"><p>“Workshops de JTBD que guiaram decisões difíceis.”</p><footer>— Head de Produto</footer></blockquote>
-          </div>
-          <button class="carousel-btn next" aria-label="Próximo">›</button>
-        </div>
-      </div>
-    </section>
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); padding: 1rem 0; background: color-mix(in oklab, var(--bg), transparent 0%); }
+.site-footer .container { display: flex; gap: .75rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); text-decoration: none; }
+.site-footer .divider { color: var(--border); }
 
-    <!-- SOBRE -->
-    <section id="sobre" class="section alt">
-      <div class="container about">
-        <div class="about-copy in-observe">
-          <h2>Sobre mim</h2>
-          <p>Designer de produto com foco em impacto de negócio, acessibilidade e experiência sem atrito. Gosto de traduzir objetivos complexos em jornadas simples — do discovery à entrega.</p>
-          <ul class="list">
-            <li>⚡ Métricas: conversão, NPS, CSAT, retenção.</li>
-            <li>🧪 Pesquisa: entrevistas, testes moderados e não‑moderados.</li>
-            <li>🧩 UI: sistemas de design, protótipos, specs para dev.</li>
-          </ul>
-          <div class="cta">
-            <a href="#contato" class="btn primary">Vamos conversar</a>
-            <a href="#projetos" class="btn ghost">Ver projetos</a>
-          </div>
-        </div>
-        <div class="about-art" aria-hidden="true">
-          <div class="token-swatch">
-            <div><span>--brand</span></div><div><span>--brand-2</span></div>
-            <div><span>--bg</span></div><div><span>--text</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* Botão voltar ao topo */
+.back-to-top {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 999;
+  width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); box-shadow: var(--shadow); cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; }
 
-    <!-- CONTATO -->
-    <section id="contato" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Contato</h2>
-          <p>Aberta a papéis de Product Designer/UX/UI — remoto ou híbrido.</p>
-        </div>
+/* Scroll reveal */
+.in-observe { opacity: 0; transform: translateY(10px); }
+.in-view { opacity: 1; transform: translateY(0); transition: transform .5s ease, opacity .5s ease; }
 
-        <form class="contact" onsubmit="return handleContact(event)" aria-label="Formulário de contato">
-          <div class="form-row"><label for="nome">Nome</label><input id="nome" name="nome" type="text" required autocomplete="name" /></div>
-          <div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
-          <div class="form-row"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" rows="5" required></textarea></div>
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Enviar</button>
-            <span class="form-hint">Sem backend: abre seu cliente de email (<code>mailto:</code>).</span>
-          </div>
-        </form>
+/* Tilt 3D leve */
+.tilt { transform-style: preserve-3d; will-change: transform; }
 
-        <ul class="social">
-          <li><a href="https://www.linkedin.com/in/helloraboff" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/helloraboff" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://medium.com/" target="_blank" rel="noopener">Medium</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
+/* Responsividade */
+@media (max-width: 960px) {
+  .hero-inner, .about { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .site-nav { position: fixed; inset: 64px 0 0 0; background: var(--bg); transform: translateY(-100%); transition: transform .25s ease; border-top: 1px solid var(--border); }
+  .site-nav ul { flex-direction: column; padding: 1rem; }
+  .nav-toggle { display: inline-grid; }
+  .site-nav.open { transform: translateY(0); }
+  .carousel-btn.prev { left: 4px; } .carousel-btn.next { right: 4px; }
+  .stats { grid-template-columns: 1fr 1fr 1fr; }
+}
 
-  <button class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+/* Prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .blob { animation: none; }
+  .in-view { transition: none; }
+}
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Hellora Boff — UX/UI Designer</p>
-      <a href="#topo">Voltar ao topo</a>
-      <span class="divider">·</span>
-      <a href="#sobre">Acessibilidade: foco visível, contraste AA, leitores de tela.</a>
-    </div>
-  </footer>
-</body>
-</html>
+/* ===== Ajustes extras p/ caber em 1 dobra (Projetos) ===== */
+#projetos { scroll-margin-top: 72px; }
+#projetos.section { padding-top: 1rem; padding-bottom: 1rem; }
+#projetos .section-head { margin-bottom: .6rem; }
+#projetos .grid.projects { gap: .75rem; }
+@media (min-width: 1100px) {
+  #projetos .grid.projects { grid-template-columns: repeat(4, 1fr); }
+}

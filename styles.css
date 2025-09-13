@@ -39,14 +39,14 @@ body {
 :root { color-scheme: light dark; }
 
 /* Acessibilidade */
-:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .skip-link {
   position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
-.skip-link:focus { position: fixed; left: 1rem; top: 1rem; z-index: 9999; width: auto; height: auto; background: var(--brand); color: #fff; padding: .5rem .75rem; border-radius: .5rem; }
+.skip-link:focus {
+  position: fixed; left: 1rem; top: 1rem; z-index: 9999; width: auto; height: auto;
+  background: var(--brand); color: #fff; padding: .5rem .75rem; border-radius: .5rem;
+}
 
 /* Layout utilitários */
 .container { width: min(1120px, 92vw); margin-inline: auto; }
@@ -122,9 +122,10 @@ body {
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; overflow: clip; transition: transform .2s ease, box-shadow .2s ease; }
 .card:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
 .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-.thumb { aspect-ratio: 4 / 2.4; background: var(--bg-alt); }
+.thumb { aspect-ratio: 16 / 9; background: var(--bg-alt); }
 .thumb-inset { width: 100%; height: 100%; display: grid; place-items: center; }
 .thumb-svg { width: 92%; height: auto; }
+.thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; } /* imagem real no card */
 .svg-bg { fill: color-mix(in oklab, var(--brand), var(--brand-2) 25%); opacity: .15; }
 .svg-bg-2 { fill: color-mix(in oklab, var(--brand-2), var(--brand) 25%); opacity: .15; }
 .svg-bg-3 { fill: color-mix(in oklab, var(--brand), #00c2a8 25%); opacity: .15; }
@@ -132,8 +133,13 @@ body {
 .bars rect, .bars circle { fill: currentColor; opacity: .25; }
 
 .card-body { padding: 1rem; display: grid; gap: .5rem; }
-.card-body h3 { margin: 0; font-size: 1.1rem; }
-.card-body p { margin: 0; color: var(--muted); }
+.card-body h3 { margin: 0; font-size: 1.1rem; line-height: 1.25;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  hyphens: auto; overflow-wrap: anywhere;
+}
+.card-body p { margin: 0; color: var(--muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
 .badges { display: flex; gap: .4rem; list-style: none; padding: 0; margin: .25rem 0 0; flex-wrap: wrap; }
 .badges li { border: 1px dashed var(--border); color: var(--muted); padding: .15rem .5rem; border-radius: .4rem; font-size: .85rem; }
 .actions { margin-top: .5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
@@ -228,14 +234,11 @@ input:focus-visible, textarea:focus-visible { outline-color: var(--focus); }
   .in-view { transition: none; }
 }
 
-/* ===== Ajustes para caber em 1 dobra (seção Projetos) ===== */
+/* ===== Ajustes extras p/ caber em 1 dobra (Projetos) ===== */
 #projetos { scroll-margin-top: 72px; }
 #projetos.section { padding-top: 1rem; padding-bottom: 1rem; }
 #projetos .section-head { margin-bottom: .6rem; }
 #projetos .grid.projects { gap: .75rem; }
-#projetos .thumb { aspect-ratio: 16 / 9; }
-#projetos .card-body { padding: .9rem; }
-#projetos .badges li { font-size: .8rem; padding: .1rem .45rem; }
 @media (min-width: 1100px) {
   #projetos .grid.projects { grid-template-columns: repeat(4, 1fr); }
 }
