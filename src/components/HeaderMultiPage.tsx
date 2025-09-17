@@ -3,17 +3,22 @@ import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import type { PageType } from "../App-MultiPage";
 
-const navItems = [
-  { name: "Início", href: "#inicio" },
-  { name: "Sobre", href: "#sobre" },
-  { name: "Habilidades", href: "#habilidades" },
-  { name: "Portfólio", href: "#projetos" },
-  { name: "Depoimentos", href: "#depoimentos" },
-  { name: "Contato", href: "#contato" },
+const navItems: { name: string; page: PageType; label: string }[] = [
+  { name: "Home", page: "home", label: "Início" },
+  { name: "About", page: "about", label: "Sobre" },
+  { name: "Work", page: "work", label: "Trabalho" },
+  { name: "Process", page: "process", label: "Processo" },
+  { name: "Contact", page: "contact", label: "Contato" },
 ];
 
-export function Header() {
+interface HeaderMultiPageProps {
+  currentPage: PageType;
+  onNavigate: (page: PageType) => void;
+}
+
+export function HeaderMultiPage({ currentPage, onNavigate }: HeaderMultiPageProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,12 +30,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
-    }
+  const handleNavigation = (page: PageType) => {
+    onNavigate(page);
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -50,7 +53,7 @@ export function Header() {
           <motion.div
             className="relative group cursor-pointer flex-shrink-0"
             whileHover={{ scale: 1.05 }}
-            onClick={() => scrollToSection("#inicio")}
+            onClick={() => handleNavigation('home')}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 rounded-xl blur group-hover:blur-md transition-all" />
             <div className="relative glass-subtle px-6 py-3 rounded-xl border border-violet-500/30">
@@ -65,15 +68,21 @@ export function Header() {
             <div className="flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.button
-                  key={item.name}
-                  className="relative text-foreground/80 hover:text-foreground transition-colors duration-200 group font-medium whitespace-nowrap"
-                  onClick={() => scrollToSection(item.href)}
+                  key={item.page}
+                  className={`relative transition-colors duration-200 group font-medium whitespace-nowrap ${
+                    currentPage === item.page
+                      ? 'text-violet-600 dark:text-violet-400'
+                      : 'text-foreground/70 hover:text-foreground'
+                  }`}
+                  onClick={() => handleNavigation(item.page)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 group-hover:w-full transition-all duration-300" />
+                  {item.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300 ${
+                    currentPage === item.page ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
                 </motion.button>
               ))}
             </div>
@@ -84,7 +93,7 @@ export function Header() {
             <ThemeToggle />
             <Button
               className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-700 hover:to-fuchsia-700 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold px-6"
-              onClick={() => scrollToSection("#contato")}
+              onClick={() => handleNavigation('contact')}
             >
               Contratar
             </Button>
@@ -116,14 +125,18 @@ export function Header() {
             <div className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
                 <motion.button
-                  key={item.name}
-                  className="text-left text-foreground/80 hover:text-foreground transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-white/5 font-medium"
-                  onClick={() => scrollToSection(item.href)}
+                  key={item.page}
+                  className={`text-left transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-white/5 font-medium ${
+                    currentPage === item.page
+                      ? 'text-violet-600 dark:text-violet-400 bg-violet-500/10'
+                      : 'text-foreground/80 hover:text-foreground'
+                  }`}
+                  onClick={() => handleNavigation(item.page)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
-                  {item.name}
+                  {item.label}
                 </motion.button>
               ))}
               <motion.div
@@ -134,7 +147,7 @@ export function Header() {
               >
                 <Button
                   className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-700 hover:to-fuchsia-700 text-white font-semibold"
-                  onClick={() => scrollToSection("#contato")}
+                  onClick={() => handleNavigation('contact')}
                 >
                   Contratar
                 </Button>

@@ -4,32 +4,32 @@ import { Search, Lightbulb, Code, Rocket, CheckCircle } from "lucide-react";
 const processSteps = [
   {
     icon: Search,
-    title: "Descoberta",
-    description: "Análise profunda dos objetivos, público-alvo e requisitos do projeto para garantir alinhamento total.",
+    title: "UX Research",
+    description: "Entendimento profundo dos usuários, stakeholders e contexto do negócio através de entrevistas, observação e análise de dados.",
     color: "from-blue-500 to-cyan-500"
   },
   {
     icon: Lightbulb,
-    title: "Ideação",
-    description: "Brainstorming criativo e desenvolvimento de conceitos inovadores baseados na pesquisa inicial.",
+    title: "Estratégia & IA",
+    description: "Definição da arquitetura de informação, fluxos de usuário e estratégia de conteúdo baseada nos insights da pesquisa.",
     color: "from-purple-500 to-pink-500"
   },
   {
     icon: Code,
-    title: "Desenvolvimento",
-    description: "Implementação técnica com código limpo, boas práticas e foco na performance e acessibilidade.",
+    title: "Prototipagem",
+    description: "Criação de wireframes, protótipos interativos e testes de usabilidade para validar soluções antes da implementação.",
     color: "from-green-500 to-emerald-500"
   },
   {
     icon: Rocket,
-    title: "Testes & Entrega",
-    description: "Testes rigorosos, otimizações finais e deploy em produção com documentação completa.",
+    title: "UI Design",
+    description: "Desenvolvimento da interface visual, sistema de design e especificações técnicas para desenvolvimento.",
     color: "from-orange-500 to-red-500"
   },
   {
     icon: CheckCircle,
-    title: "Entrega & Suporte",
-    description: "Entrega do projeto final com suporte contínuo e acompanhamento de performance.",
+    title: "Implementação & Testes",
+    description: "Acompanhamento da implementação, testes de usabilidade e ajustes baseados no feedback real dos usuários.",
     color: "from-indigo-500 to-purple-500"
   }
 ];
@@ -46,12 +46,14 @@ export function ProcessSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Meu Processo
+          <div className="overline text-blue-600 mb-4">METODOLOGIA</div>
+          <h2>
+            Processo T-Shaped Centrado no Usuário
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Uma metodologia testada e refinada que garante resultados consistentes 
-            e projetos entregues com excelência.
+          <p className="lead max-w-3xl mx-auto">
+            Metodologia estruturada que combina <span className="emphasis-text">pesquisa estratégica</span>, 
+            <span className="emphasis-text">design thinking</span> e <span className="emphasis-text">validação contínua</span> 
+            para criar experiências que realmente fazem a diferença nos negócios.
           </p>
         </motion.div>
 
@@ -75,43 +77,50 @@ export function ProcessSection() {
                 {/* Content */}
                 <div className="flex-1 text-center lg:text-left">
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
-                    whileHover={{ scale: 1.1 }}
+                    className="glass rounded-2xl p-8"
+                    whileHover={{ scale: 1.02, y: -4 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <step.icon className="w-8 h-8 text-blue-500" />
+                    <motion.div
+                      className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
+                      whileHover={{ scale: 1.1, rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <step.icon className="w-8 h-8 text-blue-500" />
+                    </motion.div>
+                    <h4>{step.title}</h4>
+                    <p className="text-muted-foreground">{step.description}</p>
                   </motion.div>
-                  <h3 className="mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
                 </div>
 
                 {/* Central Icon */}
-                <div className="relative">
+                <div className="relative hidden lg:block">
                   <motion.div
-                    className="w-20 h-20 rounded-full bg-card border-2 border-border/50 flex items-center justify-center relative z-10"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                    className="w-24 h-24 rounded-full glass-strong border-2 border-white/20 flex items-center justify-center relative z-10"
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 + 0.3, type: "spring" }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.15, rotate: 10 }}
                   >
                     <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${step.color} opacity-20 animate-pulse`} />
-                    <step.icon className={`w-8 h-8 bg-gradient-to-r ${step.color} bg-clip-text text-transparent relative z-10`} />
+                    <step.icon className={`w-10 h-10 bg-gradient-to-r ${step.color} bg-clip-text text-transparent relative z-10`} />
                     
                     {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-medium">
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg">
                       {index + 1}
                     </div>
                   </motion.div>
 
-                  {/* Glow Effect */}
+                  {/* Enhanced Glow Effect */}
                   <motion.div
-                    className={`absolute inset-0 rounded-full bg-gradient-to-r ${step.color} blur-xl opacity-0 hover:opacity-30 transition-opacity duration-300`}
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r ${step.color} blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500`}
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
                     viewport={{ once: true }}
                   />
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl" />
                 </div>
 
                 {/* Spacer for alignment */}
@@ -129,20 +138,22 @@ export function ProcessSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="max-w-2xl mx-auto p-8 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl border border-blue-500/10">
-            <h3 className="mb-4">Pronto para começar seu projeto?</h3>
+          <div className="max-w-2xl mx-auto p-8 glass rounded-2xl">
+            <h3>Pronta para transformar sua ideia?</h3>
             <p className="text-muted-foreground mb-6">
-              Vamos discutir como posso ajudar a transformar sua ideia em uma solução digital excepcional.
+              Vamos conversar sobre como posso ajudar a criar experiências que conectem pessoas e gerem resultados reais.
             </p>
-            <button 
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            <motion.button 
+              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => {
                 const element = document.querySelector("#contato");
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Iniciar Projeto
-            </button>
+              Vamos Conversar
+            </motion.button>
           </div>
         </motion.div>
       </div>

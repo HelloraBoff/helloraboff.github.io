@@ -25,23 +25,23 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-xl bg-card border border-border/50 hover:border-blue-500/30 transition-all duration-500 ${
+      className={`group relative overflow-hidden rounded-2xl glass hover:border-blue-500/30 transition-all duration-500 hover:glass-strong ${
         featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -8, scale: 1.02 }}
       viewport={{ once: true }}
     >
-      {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Enhanced Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl" />
       
       {/* Image Container */}
       <div className="relative overflow-hidden">
         <motion.div
-          className="aspect-video relative"
-          whileHover={{ scale: 1.05 }}
+          className="aspect-video relative rounded-t-2xl overflow-hidden"
+          whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.4 }}
         >
           <ImageWithFallback
@@ -57,7 +57,7 @@ export function ProjectCard({
               <Button
                 size="icon"
                 variant="secondary"
-                className="bg-background/90 backdrop-blur-sm hover:bg-background"
+                className="glass-strong text-white hover:text-white hover:bg-white/30"
                 asChild
               >
                 <a href={demoUrl} target="_blank" rel="noopener noreferrer">
@@ -69,7 +69,7 @@ export function ProjectCard({
               <Button
                 size="icon"
                 variant="secondary"
-                className="bg-background/90 backdrop-blur-sm hover:bg-background"
+                className="glass-strong text-white hover:text-white hover:bg-white/30"
                 asChild
               >
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer">
@@ -91,7 +91,7 @@ export function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 relative z-10">
         <div className="flex items-start justify-between mb-3">
           <h3 className="group-hover:text-blue-500 transition-colors duration-300">
             {title}
@@ -109,7 +109,7 @@ export function ProjectCard({
             <Badge
               key={tag}
               variant="secondary"
-              className="text-xs bg-muted/50 hover:bg-blue-500/10 hover:text-blue-600 transition-colors duration-200"
+              className="text-xs glass-subtle border-blue-500/20 text-blue-600 hover:glass transition-all duration-200"
             >
               {tag}
             </Badge>
@@ -117,11 +117,8 @@ export function ProjectCard({
         </div>
       </div>
 
-      {/* Hover Border Effect */}
-      <div className="absolute inset-0 rounded-xl">
-        <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-             style={{ mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)", maskComposite: "xor" }} />
-      </div>
+      {/* Floating Glow Effect */}
+      <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
     </motion.div>
   );
 }

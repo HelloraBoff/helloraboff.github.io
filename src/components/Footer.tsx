@@ -21,12 +21,12 @@ export function Footer() {
                 <Code className="w-5 h-5 text-blue-500" />
               </div>
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-semibold">
-                Portfolio Dev
+                Hellora Boff
               </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
-              Desenvolvedor frontend especializado em criar experiências digitais 
-              que conectam pessoas e geram resultados.
+              UX/UI Designer especializada em estratégia e experiências digitais 
+              que conectam pessoas, negócios e impacto social.
             </p>
           </motion.div>
 
@@ -42,7 +42,7 @@ export function Footer() {
             <div className="space-y-2">
               {[
                 { name: "Sobre", href: "#sobre" },
-                { name: "Projetos", href: "#projetos" },
+                { name: "Cases", href: "#projetos" },
                 { name: "Processo", href: "#processo" },
                 { name: "Contato", href: "#contato" }
               ].map((link) => (
@@ -70,9 +70,9 @@ export function Footer() {
           >
             <h4 className="font-medium">Contato</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>contato@portfolio.dev</p>
-              <p>+55 (11) 99999-9999</p>
-              <p>São Paulo, Brasil</p>
+              <p>helloraboff@gmail.com</p>
+              <p>linkedin.com/in/helloraboff</p>
+              <p>Brasília - DF, Brasil</p>
             </div>
           </motion.div>
         </div>
@@ -86,9 +86,9 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-sm text-muted-foreground flex items-center gap-2">
-            © {currentYear} Portfolio Dev. Feito com 
+            © {currentYear} Hellora Boff. Feito com 
             <Heart className="w-4 h-4 text-red-500 fill-current" />
-            e muito café.
+            e muito propósito.
           </p>
           
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
