@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -10,27 +12,41 @@
   --brand-success: #10B981; /* Verde */
   --brand-teal: #14B8A6; /* Teal accent */
   
-  /* Light Mode - Legibilidade Otimizada */
-  --background: #FFFFFF;
-  --foreground: #1a1a1a;
-  --card: rgba(255, 255, 255, 0.95);
-  --card-foreground: #1a1a1a;
-  --popover: rgba(255, 255, 255, 0.98);
-  --popover-foreground: #1a1a1a;
+  /* Gradientes do Design System */
+  --gradient-light: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+  --gradient-dark: linear-gradient(135deg, #994dff 0%, #10cda5 100%);
+  
+  /* Cores Elegantes - Light Mode */
+  --text-primary-light: #374151; /* Cinza médio escuro */
+  --text-secondary-light: #4b5563; /* Cinza médio */
+  --text-muted-light: #6b7280; /* Cinza suave */
+  
+  /* Cores Elegantes - Dark Mode */
+  --text-primary-dark: #f8f7ff; /* Branco suave */
+  --text-secondary-dark: #e2e1ea; /* Branco acinzentado */
+  --text-muted-dark: #b8b7c4; /* Cinza claro */
+  
+  /* Light Mode - Elegante e Sofisticado */
+  --background: #fafafa; /* Off-white suave */
+  --foreground: var(--text-primary-light);
+  --card: rgba(255, 255, 255, 0.90);
+  --card-foreground: var(--text-primary-light);
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: var(--text-primary-light);
   --primary: var(--brand-primary);
-  --primary-foreground: #ffffff;
-  --secondary: #F8FAFC;
-  --secondary-foreground: #374151;
-  --muted: #F9FAFB;
-  --muted-foreground: #4B5563;
+  --primary-foreground: var(--text-primary-dark);
+  --secondary: #f8f8fb;
+  --secondary-foreground: var(--text-secondary-light);
+  --muted: #f5f5f8;
+  --muted-foreground: var(--text-muted-light);
   --accent: var(--brand-accent);
-  --accent-foreground: #1a1a1a;
+  --accent-foreground: var(--text-primary-light);
   --destructive: #EF4444;
-  --destructive-foreground: #ffffff;
-  --border: rgba(107, 114, 128, 0.15);
-  --input: rgba(255, 255, 255, 0.9);
-  --input-background: rgba(255, 255, 255, 0.95);
-  --switch-background: #E5E7EB;
+  --destructive-foreground: var(--text-primary-dark);
+  --border: rgba(153, 77, 255, 0.15);
+  --input: rgba(255, 255, 255, 0.85);
+  --input-background: rgba(255, 255, 255, 0.90);
+  --switch-background: #ededf0;
   --ring: var(--brand-primary);
   
   /* Typography Scale */
@@ -52,17 +68,18 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   
-  --radius: 1rem;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  /* Bordas Elegantemente Arredondadas */
+  --radius: 0.75rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
   
-  /* Glassmorphism Variables - Light Mode */
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(139, 92, 246, 0.15);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  /* Glassmorphism Variables - Light Mode com Gradientes */
+  --glass-bg: rgba(255, 255, 255, 0.80);
+  --glass-border: var(--gradient-light);
+  --glass-shadow: 0 8px 32px 0 rgba(153, 77, 255, 0.08);
   
   --sidebar: var(--background);
   --sidebar-foreground: var(--foreground);
@@ -75,31 +92,31 @@
 }
 
 .dark {
-  /* Dark Mode - Violeta Profundo */
-  --background: #0F0B1F; /* Base violeta escuro */
-  --foreground: #F3F0FF;
-  --card: rgba(139, 92, 246, 0.08);
-  --card-foreground: #F3F0FF;
-  --popover: rgba(31, 24, 47, 0.95);
-  --popover-foreground: #F3F0FF;
+  /* Dark Mode - Elegante e Sutil */
+  --background: #0F0B1F; /* Base violeta escuro mantido */
+  --foreground: var(--text-primary-dark);
+  --card: rgba(139, 92, 246, 0.06);
+  --card-foreground: var(--text-primary-dark);
+  --popover: rgba(31, 24, 47, 0.92);
+  --popover-foreground: var(--text-primary-dark);
   --primary: var(--brand-primary);
-  --primary-foreground: #F3F0FF;
-  --secondary: rgba(139, 92, 246, 0.12);
-  --secondary-foreground: #C4B5FD;
-  --muted: rgba(139, 92, 246, 0.08);
-  --muted-foreground: #A78BFA;
+  --primary-foreground: var(--text-primary-dark);
+  --secondary: rgba(139, 92, 246, 0.08);
+  --secondary-foreground: var(--text-secondary-dark);
+  --muted: rgba(139, 92, 246, 0.04);
+  --muted-foreground: var(--text-muted-dark);
   --accent: var(--brand-accent);
   --accent-foreground: #1F1832;
   --destructive: #F87171;
-  --destructive-foreground: #F3F0FF;
-  --border: rgba(139, 92, 246, 0.2);
-  --input: rgba(139, 92, 246, 0.1);
+  --destructive-foreground: var(--text-primary-dark);
+  --border: rgba(153, 77, 255, 0.12);
+  --input: rgba(139, 92, 246, 0.08);
   --ring: var(--brand-secondary);
   
-  /* Glassmorphism Dark */
-  --glass-bg: rgba(15, 23, 42, 0.2);
-  --glass-border: rgba(71, 85, 105, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  /* Glassmorphism Dark com Gradientes */
+  --glass-bg: rgba(15, 23, 42, 0.15);
+  --glass-border: var(--gradient-dark);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
   
   --sidebar: var(--background);
   --sidebar-foreground: var(--foreground);
@@ -155,19 +172,23 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
     @apply bg-background text-foreground;
     background: var(--background);
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Background gradiente apenas no dark mode */
+  /* Background gradiente sutil no dark mode */
   .dark body {
     background: 
-      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
-      radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 70%),
-      radial-gradient(circle at 40% 90%, rgba(192, 132, 252, 0.06) 0%, transparent 70%),
+      radial-gradient(circle at 20% 50%, rgba(153, 77, 255, 0.08) 0%, transparent 70%),
+      radial-gradient(circle at 80% 20%, rgba(16, 205, 165, 0.06) 0%, transparent 70%),
+      radial-gradient(circle at 40% 90%, rgba(139, 92, 246, 0.04) 0%, transparent 70%),
       var(--background);
     background-attachment: fixed;
   }
@@ -184,16 +205,19 @@
       font-weight: var(--font-weight-extrabold);
       line-height: 1.05;
       letter-spacing: -0.025em;
-      color: var(--foreground);
       margin-bottom: 1.5rem;
-    }
-
-    /* H1 com gradiente apenas no dark mode */
-    .dark h1 {
-      background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 25%, #C084FC 50%, #E879F9 75%, #F0ABFC 100%);
+      background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+    }
+
+    /* H1 com gradiente dark mode */
+    .dark h1 {
+      background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+      color: transparent !important;
       text-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
     }
 
@@ -203,20 +227,23 @@
       font-weight: var(--font-weight-bold);
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--foreground);
       margin-bottom: 1.5rem;
       position: relative;
-    }
-
-    /* H2 com gradiente apenas no dark mode */
-    .dark h2 {
-      background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
+      background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    /* H2 - Adicionar linha decorativa */
+    /* H2 com gradiente dark mode */
+    .dark h2 {
+      background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+      color: transparent !important;
+    }
+
+    /* H2 - Adicionar linha decorativa com gradiente do tema */
     h2::after {
       content: '';
       position: absolute;
@@ -225,8 +252,12 @@
       transform: translateX(-50%);
       width: 4rem;
       height: 0.25rem;
-      background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+      background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
       border-radius: 0.125rem;
+    }
+
+    .dark h2::after {
+      background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
     }
 
     /* H3 - Subsection Headers - MÉDIO IMPACTO */
@@ -235,8 +266,18 @@
       font-weight: var(--font-weight-bold);
       line-height: 1.2;
       letter-spacing: -0.015em;
-      color: var(--foreground);
       margin-bottom: 1rem;
+      background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .dark h3 {
+      background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+      color: transparent !important;
     }
 
     /* H4 - Component Headers - IMPACTO MODERADO */
@@ -361,18 +402,21 @@
     font-weight: var(--font-weight-extrabold);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--foreground);
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-  }
-
-  /* Gradiente apenas no dark mode */
-  .dark .section-title {
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-teal));
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  /* Gradiente dark mode */
+  .dark .section-title {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
   }
 
   .section-title::after {
@@ -383,8 +427,12 @@
     transform: translateX(-50%);
     width: 5rem;
     height: 0.25rem;
-    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
     border-radius: 0.125rem;
+  }
+
+  .dark .section-title::after {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
   }
 
   .card-title {
@@ -392,18 +440,35 @@
     font-weight: var(--font-weight-bold);
     line-height: 1.3;
     letter-spacing: -0.01em;
-    color: var(--foreground);
     margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .dark .card-title {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
   }
 
   .stat-number {
     font-size: var(--text-4xl);
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  .dark .stat-number {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
   }
 
   .badge-text {
@@ -414,16 +479,19 @@
   }
 
   .gradient-text {
-    color: var(--brand-primary);
     font-weight: var(--font-weight-bold);
-  }
-
-  /* Gradiente apenas no dark mode */
-  .dark .gradient-text {
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-teal));
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  /* Gradiente dark mode */
+  .dark .gradient-text {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
   }
 
   .emphasis-text {
@@ -453,52 +521,643 @@
   }
 }
 
-/* Glassmorphism Utilities */
-@layer utilities {
+/* Glassmorphism Elegante e Refinado - SEM bordas pesadas */
+@layer components {
   .glass {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.1);
-    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: var(--glass-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .glass:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(139, 92, 246, 0.15);
+    box-shadow: 0 12px 40px 0 rgba(153, 77, 255, 0.12);
+    transform: translateY(-2px);
   }
   
   .glass-strong {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(139, 92, 246, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(153, 77, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-strong:hover {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(139, 92, 246, 0.12);
+    box-shadow: 0 16px 48px 0 rgba(153, 77, 255, 0.15);
+    transform: translateY(-4px);
   }
   
   .glass-subtle {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.70);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(139, 92, 246, 0.08);
-    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 24px 0 rgba(153, 77, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-subtle:hover {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(139, 92, 246, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(153, 77, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  /* Variantes com gradiente sutil apenas no hover */
+  .glass-gradient {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--glass-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  
+  .glass-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(153, 77, 255, 0.02) 0%, rgba(244, 51, 158, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  .glass-gradient:hover::before {
+    opacity: 1;
+  }
+  
+  .glass-gradient:hover {
+    border-color: rgba(139, 92, 246, 0.12);
+    box-shadow: 0 12px 40px 0 rgba(153, 77, 255, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Variante premium com gradiente mais presente mas elegante */
+  .glass-premium {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(255, 255, 255, 0.88) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 
+      0 8px 32px 0 rgba(153, 77, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  
+  .glass-premium:hover {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.98) 0%, 
+      rgba(255, 255, 255, 0.92) 100%);
+    box-shadow: 
+      0 16px 48px 0 rgba(153, 77, 255, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(139, 92, 246, 0.15);
+    transform: translateY(-3px);
   }
 }
 
-/* Dark mode glassmorphism */
-.dark .glass {
-  background: rgba(15, 23, 42, 0.3);
-  border: 1px solid rgba(71, 85, 105, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  /* Dark mode glassmorphism elegante e refinado */
+  .dark .glass {
+  background: rgba(15, 11, 31, 0.60);
+  border-color: rgba(139, 92, 246, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+.dark .glass:hover {
+  background: rgba(15, 11, 31, 0.75);
+  border-color: rgba(139, 92, 246, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.35);
 }
 
 .dark .glass-strong {
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(71, 85, 105, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  background: rgba(15, 11, 31, 0.80);
+  border-color: rgba(139, 92, 246, 0.12);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.40),
+    inset 0 1px 0 rgba(139, 92, 246, 0.08);
+}
+
+.dark .glass-strong:hover {
+  background: rgba(15, 11, 31, 0.90);
+  border-color: rgba(139, 92, 246, 0.18);
+  box-shadow: 
+    0 16px 48px 0 rgba(0, 0, 0, 0.50),
+    inset 0 1px 0 rgba(139, 92, 246, 0.12);
 }
 
 .dark .glass-subtle {
-  background: rgba(15, 23, 42, 0.2);
-  border: 1px solid rgba(71, 85, 105, 0.15);
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(15, 11, 31, 0.40);
+  border-color: rgba(139, 92, 246, 0.06);
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.20);
+}
+
+.dark .glass-subtle:hover {
+  background: rgba(15, 11, 31, 0.55);
+  border-color: rgba(139, 92, 246, 0.10);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.30);
+}
+
+.dark .glass-gradient {
+  background: rgba(15, 11, 31, 0.60);
+  border-color: rgba(139, 92, 246, 0.08);
+}
+
+.dark .glass-gradient::before {
+  background: linear-gradient(135deg, rgba(153, 77, 255, 0.04) 0%, rgba(16, 205, 165, 0.04) 100%);
+}
+
+.dark .glass-gradient:hover {
+  border-color: rgba(139, 92, 246, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.30);
+}
+
+.dark .glass-premium {
+  background: linear-gradient(135deg, 
+    rgba(15, 11, 31, 0.92) 0%, 
+    rgba(15, 11, 31, 0.85) 100%);
+  border-color: rgba(139, 92, 246, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(139, 92, 246, 0.10);
+}
+
+.dark .glass-premium:hover {
+  background: linear-gradient(135deg, 
+    rgba(15, 11, 31, 0.96) 0%, 
+    rgba(15, 11, 31, 0.90) 100%);
+  border-color: rgba(139, 92, 246, 0.20);
+  box-shadow: 
+    0 16px 48px 0 rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(139, 92, 246, 0.15);
+}
+
+/* FORÇAR GRADIENTES DARK MODE - EXTRA ESPECIFICIDADE */
+.dark body h1,
+.dark body h2,
+.dark body h3,
+.dark body .section-title,
+.dark body .card-title,
+.dark body .stat-number,
+.dark body .gradient-text {
+  background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Forçar linhas decorativas no dark mode */
+.dark body h2::after,
+.dark body .section-title::after {
+  background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
 }
 
 html {
   font-size: var(--font-size);
+}
+
+/* Custom Carousel Styles - INFINITO FLUIDO ✨ */
+@layer components {
+  .custom-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .custom-carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    transform: translateZ(0); /* Hardware acceleration */
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .custom-carousel-slide {
+    flex-shrink: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Performance optimizations */
+  .custom-carousel-track,
+  .custom-carousel-slide {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .custom-carousel-track {
+      transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+  }
+
+  /* Utility classes */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+
+
+
+
+  /* BADGES EXPANDIDAS - SEM CORTE DE PALAVRAS E COM MAIS ESPAÇO */
+  
+  /* Desktop - Badges expandidas para mostrar texto completo */
+  .badge-desktop-expanded {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    padding: 3px 8px !important;
+    min-height: 18px !important;
+    height: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    /* SEM max-width - permite expansão total */
+  }
+
+  /* Mobile - Badges expandidas com mais espaço lateral */
+  @media (max-width: 768px) {
+    .badge-mobile-expanded {
+      font-size: 9px !important;
+      line-height: 1.2 !important;
+      padding: 2px 6px !important;
+      min-height: 14px !important;
+      height: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 6px !important;
+      font-weight: 500 !important;
+      white-space: nowrap !important;
+      /* SEM max-width - permite expansão total */
+    }
+  }
+
+  /* Ainda mais compacto para mobile pequeno */
+  @media (max-width: 480px) {
+    .badge-mobile-compact {
+      font-size: 9px !important;
+      padding: 1px 3px !important;
+      min-height: 12px !important;
+      height: 12px !important;
+      border-radius: 3px !important;
+    }
+  }
+
+  /* LinkedIn Button Hover - Cor oficial do LinkedIn em ambos os modos */
+  .linkedin-hover:hover {
+    background-color: #0077B5 !important;
+    border-color: #0077B5 !important;
+    color: white !important;
+  }
+
+  /* Garantir que funcione no dark mode também */
+  .dark .linkedin-hover:hover {
+    background-color: #0077B5 !important;
+    border-color: #0077B5 !important;
+    color: white !important;
+  }
+
+  /* Garantir que ícones dentro do LinkedIn também fiquem brancos */
+  .linkedin-hover:hover svg,
+  .linkedin-hover:hover .lucide {
+    color: white !important;
+  }
+
+  .dark .linkedin-hover:hover svg,
+  .dark .linkedin-hover:hover .lucide {
+    color: white !important;
+  }
+
+  /* Classe para remover linha decorativa do H2 quando necessário */
+  .no-decorative-line::after {
+    display: none !important;
+  }
+
+  /* Classes utilitárias para cards especiais */
+  .card-elegant {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 24px 0 rgba(153, 77, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .card-elegant:hover {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(139, 92, 246, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(153, 77, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .card-premium {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(255, 255, 255, 0.88) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 
+      0 8px 32px 0 rgba(153, 77, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  
+  .card-premium:hover {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.98) 0%, 
+      rgba(255, 255, 255, 0.92) 100%);
+    box-shadow: 
+      0 16px 48px 0 rgba(153, 77, 255, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(139, 92, 246, 0.15);
+    transform: translateY(-3px);
+  }
+
+  .card-hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  /* Bordas sutis apenas quando necessário */
+  .border-elegant {
+    border: 1px solid rgba(139, 92, 246, 0.08);
+  }
+
+  .dark .border-elegant {
+    border-color: rgba(139, 92, 246, 0.12);
+  }
+
+  .border-elegant-hover {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease;
+  }
+
+  .border-elegant-hover:hover {
+    border-color: rgba(139, 92, 246, 0.15);
+  }
+
+  .dark .border-elegant-hover {
+    border-color: rgba(139, 92, 246, 0.06);
+  }
+
+  .dark .border-elegant-hover:hover {
+    border-color: rgba(139, 92, 246, 0.18);
+  }
+
+  /* Gradiente sutil apenas como destaque */
+  .accent-gradient {
+    position: relative;
+  }
+
+  .accent-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  .accent-gradient:hover::after {
+    opacity: 0.6;
+  }
+
+  .dark .accent-gradient::after {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%);
+  }
+
+  /* Dark mode para card-elegant */
+  .dark .card-elegant {
+    background: rgba(15, 11, 31, 0.40);
+    border-color: rgba(139, 92, 246, 0.06);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.20);
+  }
+
+  .dark .card-elegant:hover {
+    background: rgba(15, 11, 31, 0.55);
+    border-color: rgba(139, 92, 246, 0.10);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.30);
+  }
+
+  /* Dark mode para card-premium */
+  .dark .card-premium {
+    background: linear-gradient(135deg, 
+      rgba(15, 11, 31, 0.92) 0%, 
+      rgba(15, 11, 31, 0.85) 100%);
+    border-color: rgba(139, 92, 246, 0.15);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(139, 92, 246, 0.10);
+  }
+
+  .dark .card-premium:hover {
+    background: linear-gradient(135deg, 
+      rgba(15, 11, 31, 0.96) 0%, 
+      rgba(15, 11, 31, 0.90) 100%);
+    border-color: rgba(139, 92, 246, 0.20);
+    box-shadow: 
+      0 16px 48px 0 rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(139, 92, 246, 0.15);
+  }
+
+  /* Linha conectora da ProcessSection com gradientes do design system */
+  .connecting-line {
+    background: linear-gradient(90deg, rgba(153, 77, 255, 0.2) 0%, rgba(244, 51, 158, 0.2) 100%);
+  }
+
+  .dark .connecting-line {
+    background: linear-gradient(90deg, rgba(153, 77, 255, 0.2) 0%, rgba(16, 205, 165, 0.2) 100%);
+  }
+
+  /* Header com borda gradiente elegante */
+  .header-with-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+    opacity: 0.8;
+  }
+
+  .dark .header-with-border::after {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%);
+  }
+}
+
+/* Utility classes separadas */
+@layer utilities {
+  .card-hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  /* Bordas sutis apenas quando necessário */
+  .border-elegant {
+    border: 1px solid rgba(139, 92, 246, 0.08);
+  }
+
+  .dark .border-elegant {
+    border-color: rgba(139, 92, 246, 0.12);
+  }
+
+  .border-elegant-hover {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease;
+  }
+
+  .border-elegant-hover:hover {
+    border-color: rgba(139, 92, 246, 0.15);
+  }
+
+  .dark .border-elegant-hover {
+    border-color: rgba(139, 92, 246, 0.06);
+  }
+
+  .dark .border-elegant-hover:hover {
+    border-color: rgba(139, 92, 246, 0.18);
+  }
+
+  /* Gradiente sutil apenas como destaque */
+  .accent-gradient {
+    position: relative;
+  }
+
+  .accent-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  .accent-gradient:hover::after {
+    opacity: 0.6;
+  }
+
+  .dark .accent-gradient::after {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%);
+  }
+
+  /* Estrelas com gradiente no testimonials */
+  .star-gradient {
+    stroke: url(#star-gradient-light);
+  }
+
+  .dark .star-gradient {
+    stroke: url(#star-gradient-dark) !important;
+  }
+
+  /* Footer buttons com gradiente sutil da paleta */
+  .footer-gradient-hover:hover {
+    background: linear-gradient(135deg, rgba(153, 77, 255, 0.15) 0%, rgba(244, 51, 158, 0.15) 100%) !important;
+    border-color: rgba(153, 77, 255, 0.4) !important;
+  }
+
+  .dark .footer-gradient-hover:hover {
+    background: linear-gradient(135deg, rgba(153, 77, 255, 0.20) 0%, rgba(16, 205, 165, 0.20) 100%) !important;
+    border-color: rgba(153, 77, 255, 0.4) !important;
+  }
+
+  /* Botões com gradiente correto em cada modo */
+  .project-card-button {
+    background: linear-gradient(135deg, #994dff 0%, #f4339e 100%) !important;
+  }
+
+  .dark .project-card-button {
+    background: linear-gradient(135deg, #994dff 0%, #10cda5 100%) !important;
+  }
+
+  /* Carrossel responsivo - Desktop vs Mobile */
+  .carousel-container {
+    --cards-visible: 3; /* Desktop: 3 cards visíveis */
+    --card-width: calc(100% / var(--cards-visible));
+    --slide-width: calc(100% / var(--cards-visible));
+  }
+
+  @media (max-width: 768px) {
+    .carousel-container {
+      --cards-visible: 1; /* Mobile: 1 card visível */
+      --card-width: 100%;
+      --slide-width: 100%;
+    }
+  }
 }

@@ -62,7 +62,7 @@ export function StatsSection() {
           {impactStats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              className="glass-strong rounded-3xl p-8 text-center group hover:scale-105 transition-all duration-500 border border-violet-500/20 hover:border-violet-400/40 relative overflow-hidden"
+              className="glass-strong rounded-3xl p-8 text-center group hover:scale-105 transition-all duration-500 border border-violet-500/30 dark:border-violet-500/20 hover:border-violet-400/50 dark:hover:border-violet-400/40 bg-white/85 dark:bg-slate-900/20 relative overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
@@ -85,7 +85,7 @@ export function StatsSection() {
 
               {/* Number with Enhanced Animation */}
               <motion.div
-                className={`text-5xl lg:text-6xl font-black text-violet-600 dark:bg-gradient-to-br dark:${stat.gradient} dark:bg-clip-text dark:text-transparent mb-4 leading-none`}
+                className={`text-5xl lg:text-6xl font-black text-slate-800 dark:bg-gradient-to-br dark:${stat.gradient} dark:bg-clip-text dark:text-transparent mb-4 leading-none`}
                 initial={{ scale: 0.5, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -101,7 +101,7 @@ export function StatsSection() {
 
               {/* Label */}
               <motion.h4
-                className="text-lg font-bold text-gray-900 dark:text-violet-200 mb-2"
+                className="text-lg font-bold text-slate-800 dark:text-violet-200 mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.15 + 0.6 }}
@@ -112,7 +112,7 @@ export function StatsSection() {
 
               {/* Description */}
               <motion.p
-                className="text-sm text-gray-700 dark:text-violet-100/60 leading-relaxed"
+                className="text-sm text-slate-700 dark:text-violet-100/60 leading-relaxed"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.15 + 0.8 }}

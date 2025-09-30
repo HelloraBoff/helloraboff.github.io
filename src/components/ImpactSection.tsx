@@ -208,37 +208,7 @@ export function ImpactSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="glass-strong p-8 rounded-3xl border border-violet-500/20">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-violet-200 mb-6">
-              O Poder da Perspectiva Diversificada
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="space-y-3">
-                <h4 className="font-semibold text-violet-600 dark:text-violet-300">
-                  🏢 Visão Operacional (Caixa + LATAM)
-                </h4>
-                <p className="text-sm text-gray-700 dark:text-violet-100/80">
-                  Entendimento profundo de processos corporativos, compliance e operações complexas
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <h4 className="font-semibold text-violet-600 dark:text-violet-300">
-                  🎨 Expertise em UX/UI (B2HR + Projetos)
-                </h4>
-                <p className="text-sm text-gray-700 dark:text-violet-100/80">
-                  Especialização técnica aplicada com conhecimento real dos desafios empresariais
-                </p>
-              </div>
-            </div>
 
-            <div className="mt-6 pt-6 border-t border-violet-500/20">
-              <p className="text-violet-600 dark:text-violet-300 font-medium">
-                = Soluções de UX/UI que realmente funcionam na prática 🚀
-              </p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
