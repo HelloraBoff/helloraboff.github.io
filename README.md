@@ -1,7 +1,7 @@
 
-  # Portfolio Prototype Revamp
+  # Portfólio - Hellora UX/UI Design
 
-  This is a code bundle for Portfolio Prototype Revamp. The original project is available at https://www.figma.com/design/RIgXyvloctBx9I06eSgSve/Portfolio-Prototype-Revamp.
+  This is a code bundle for Portfólio - Hellora UX/UI Design. The original project is available at https://www.figma.com/design/RIgXyvloctBx9I06eSgSve/Portf%C3%B3lio---Hellora-UX-UI-Design.
 
   ## Running the code
 

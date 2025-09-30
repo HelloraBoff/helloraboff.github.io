@@ -8,32 +8,32 @@ const journeySteps = [
     period: "2017-2019",
     title: "Caixa Seguradora",
     role: "Representante da Diretoria de Pessoas",
-    description: "Vivência operacional em processos corporativos, compliance e experiência do colaborador. Base sólida para entender a realidade empresarial.",
-    highlight: "Fundação em processos empresariais"
+    description: "Base em Business Alignment e stakeholder management. Vivência operacional que me ensinou a conectar estratégia corporativa à experiência do colaborador.",
+    highlight: "Fundação em visão de negócio"
   },
   {
     icon: Plane,
-    period: "2019-2020",
+    period: "2019-2020", 
     title: "LATAM Airlines",
     role: "Agente de Operações & Vendas",
-    description: "Experiência prática em operações complexas e atendimento ao cliente. Visão completa da jornada do usuário em ambiente de alta pressão.",
-    highlight: "Perspectiva operacional e comercial"
+    description: "Experiência prática em Customer Experience e operações complexas. Desenvolvi olhar analítico para jornadas do usuário em ambientes de alta performance.",
+    highlight: "Analytics comportamentais na prática"
   },
   {
     icon: GraduationCap,
     period: "2020-2022",
-    title: "Transição para UX/UI",
-    role: "Formação & Primeiros Projetos",
-    description: "Especialização em UX/UI Design aplicando conhecimento prévio em processos. Projetos acadêmicos (UnB) e sociais para consolidar expertise.",
-    highlight: "Aplicação estratégica do conhecimento"
+    title: "Transição Estratégica",
+    role: "Formação UX/UI + Projetos UnB",
+    description: "Especialização técnica aplicando conhecimento empresarial. Projetos acadêmicos (UnB) e sociais consolidaram expertise em UX Strategy e Data-informed Design.",
+    highlight: "Convergência: negócio + design"
   },
   {
     icon: Heart,
     period: "2022-Presente",
-    title: "B2HR & Projetos Autorais",
-    role: "UX/UI Designer Especialista",
-    description: "4+ anos focados em Employee Experience, sistemas complexos e impacto social. Combinação única de visão estratégica e execução prática.",
-    highlight: "Expertise consolidada e impacto mensurável"
+    title: "B2HR & Growth Design",
+    role: "UX/UI Designer T-Shaped",
+    description: "Profundidade em Growth Design, UX Strategy e Rapid Prototyping. Amplitude em branding, facilitação e analytics — criando soluções holísticas de impacto.",
+    highlight: "Perfil T-shaped consolidado"
   }
 ];
 
@@ -61,12 +61,13 @@ export function JourneySection() {
           </Badge>
           
           <h2 className="mb-6">
-            Da Operação ao Design Estratégico
+            Minha Jornada: Construindo um Perfil T-Shaped
           </h2>
           
           <p className="lead max-w-4xl mx-auto">
-            <span className="text-violet-600 dark:text-violet-200 font-semibold">10+ anos de experiência</span> conectando 
-            vivência operacional, comercial e acadêmica para criar soluções de UX/UI que realmente funcionam na prática
+            <span className="text-violet-600 dark:text-violet-200 font-semibold">Administradora por formação, designer por paixão</span> — 
+            minha trajetória conecta vivência empresarial, visão de negócio e expertise em Growth Design 
+            para soluções que geram impacto mensurável.
           </p>
         </motion.div>
 
@@ -153,12 +154,12 @@ export function JourneySection() {
         >
           <div className="glass-strong p-8 rounded-3xl border border-violet-500/20">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-violet-200 mb-4">
-              O Diferencial: Visão 360°
+              O Diferencial T-Shaped: Profundidade + Amplitude
             </h3>
             <p className="text-gray-700 dark:text-violet-100/80 leading-relaxed">
-              Esta trajetória única me permite <span className="font-semibold text-violet-600 dark:text-violet-300">conectar 
-              realidade operacional, necessidades comerciais e excelência em UX/UI</span> para criar soluções que 
-              funcionam na teoria e na prática.
+              Esta jornada me permite <span className="font-semibold text-violet-600 dark:text-violet-300">atuar com profundidade 
+              em Growth Design e UX Strategy, mas também colaborar em branding, facilitação, analytics e comunicação</span>. 
+              Resultado: soluções que conectam objetivos de negócio a experiências de impacto mensurável.
             </p>
           </div>
         </motion.div>

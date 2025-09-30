@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Hellora Boff | UX/UI Designer | Brasília-DF</title>
+    <meta name="description" content="Portfólio de Hellora Boff - UX/UI Designer com 10+ anos de experiência em Brasília-DF. Especialista em Growth Design, UX Strategy e Design centrado em dados." />
+    <meta name="keywords" content="UX Designer, UI Designer, Brasília, Portfolio, UX Strategy, Growth Design, Design System, Figma, React" />
+    <meta name="author" content="Hellora Boff" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hellora Boff | UX/UI Designer | Brasília-DF" />
+    <meta property="og:description" content="UX/UI Designer com 10+ anos de experiência. Especialista em Growth Design e UX Strategy em Brasília-DF." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://helloraboff.github.io/portfolio/" />
+    <meta property="og:image" content="https://helloraboff.github.io/portfolio/og-image.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hellora Boff | UX/UI Designer" />
+    <meta name="twitter:description" content="UX/UI Designer com 10+ anos de experiência. Especialista em Growth Design e UX Strategy." />
+    <meta name="twitter:image" content="https://helloraboff.github.io/portfolio/og-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#8B5CF6">
+    
+    <!-- Preload Critical Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS for faster loading -->
+    <style>
+      /* Critical CSS inline para loading mais rápido */
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #ffffff;
+        color: #0f172a;
+      }
+      
+      .dark body {
+        background-color: #0F0B1F;
+        color: #F3F0FF;
+      }
+      
+      /* Loading screen */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #8B5CF6, #A855F7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- React App -->
+    <div id="root"></div>
+    
+    <!-- Remove loading screen when React loads -->
+    <script>
+      // Remove loading screen when page loads
+      window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+    
+    <!-- Main App Script -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
