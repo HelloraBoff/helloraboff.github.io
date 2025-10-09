@@ -23,7 +23,7 @@ const aboutData = {
   en: {
     title: "My Journey: From Business Strategy to Experience Design",
     paragraphs: [
-      "An Administrator by training and a UX/UI Designer by passion, my professional journey is the union of strategic vision and creativity. With over 10 years of experience, I act as a bridge between human needs and digital solutions, translating user needs and business goals into impactful experiences.",
+      "An Administrator by training and a UX/UI Designer by passion, my professional journey is the union of strategic vision with creative strength. With over 10 years of experience, I act as a bridge between solutions and human needs, translating business goals into impactful experiences.",
       "My T-shaped profile allows me to specialize in UX Strategy, Service Design, and Growth Design, bringing systemic vision and added value to everything I deliver. My approach combines analytical thinking with creative problem-solving, enhanced by a Rapid Prototyping mindset and Data-informed, iterative processes.",
       "My mission goes beyond screen design—I serve as Technical Leadership that transforms business complexity into human-centered, scalable solutions. My greatest value lies in structuring ambiguity, creating logic and viability where processes are uncertain. My commitment is to ensure every solution delivers measurable results and, above all, real purpose for the user.",
       "In the end, this is what defines Strategy: transforming Design into a decisive Competitive Advantage."
@@ -43,7 +43,7 @@ export function AboutSection() {
   const content = aboutData[language];
 
   const openLinkedIn = () => {
-    window.open("https://www.linkedin.com/in/helloraboff/details/experience/", "_blank");
+    window.open("https://www.linkedin.com/in/helloraboff/", "_blank");
   };
 
   return (

@@ -10,7 +10,7 @@ const featuredProjects = {
   pt: [
     {
       id: "caixa-seguradora-reembolso",
-      title: "Da Burocracia à Confiança | Redesenho sistema de seembolso",
+      title: "Da Burocracia à Confiança | Redesenho sistema de reembolso",
       category: "Service Design | Otimização de Processos | Employee Experience (EX)",
       description: "Participei da transformação de um fluxo de reembolso caótico e manual em um processo digital e intuitivo. O resultado foi redução de SLA, melhoria na Employee Epx. e aumento da eficiência e confiança no processo.",
       tags: ["Service Design", "Process Optimization", "Employee Experience"],

@@ -71,7 +71,7 @@ const testimonialsData = {
         name: "Patrícia Batista",
         role: "Coordenadora e Professora Agenda ESG",
         company: "Gran",
-        content: "A Hellora é uma das pessoas mais inteligentes que já trabalhei. Realizava atividades no trabalho que exigiam análise, responsabilidade e habilidade com dados. Se destaca por ter senso de dono, disponibilidade para compartilhar o conhecimento e orientação para promover melhoria de processos e projetos. É uma pessoa muito querida por todos, confiável e comprometida.",
+        content: "A Hellora é uma das pessoas mais inteligentes com quem já trabalhei. Realizava atividades no trabalho que exigiam análise, responsabilidade e habilidade com dados. Se destaca por ter senso de dono, disponibilidade para compartilhar o conhecimento e orientação para promover melhoria de processos e projetos. É uma pessoa muito querida por todos, confiável e comprometida.",
         date: "Março 2022",
         relationship: "Trabalhou na mesma equipe que Hellora",
         rating: 5,
@@ -153,7 +153,7 @@ const testimonialsData = {
         linkedinUrl: "https://www.linkedin.com/in/marina-costa-barbosa/"
       },
       {
-        name: "Ana Paula Lucas Sandoval Machado",
+        name: "Ana Paula Machado",
         role: "Head of Training and Development",
         company: "B2HR",
         content: "Working with Hellô is a privilege. Attentive, detail-oriented, open to new ideas, organized. Focused on defining and improving the processes she's involved in, she expresses creativity that delights. She likes to work with well-defined goals, deadlines and priorities. Cheerful, willing and available. She embraces challenges with vitality. She's always ready to collaborate with the team.",
@@ -186,7 +186,7 @@ const testimonialsData = {
         linkedinUrl: "https://www.linkedin.com/in/patricia-batista-esg/"
       },
       {
-        name: "Marina Magalhães Duarte de Amorim",
+        name: "Marina Amorim",
         role: "Head of Marketing and Sales",
         company: "B2HR",
         content: "Hello, I really liked your positioning yesterday in the meeting when you brought up the branding topic. You managed to address the topic with propriety, empathetically, highlighting the importance and with lightness. This way we gained space for the topic to have relevance in B2.",
@@ -197,7 +197,7 @@ const testimonialsData = {
         linkedinUrl: "https://www.linkedin.com/in/marina-amorim-b2hr/"
       },
       {
-        name: "Marina Magalhães Duarte de Amorim",
+        name: "Marina Amorim",
         role: "Head of Marketing and Sales",
         company: "B2HR",
         content: "Hello, I would like to highlight that your proactive and autonomous posture is already being noticed! You have given the necessary cadence to the campaigns!",
@@ -208,7 +208,7 @@ const testimonialsData = {
         linkedinUrl: "https://www.linkedin.com/in/marina-amorim-b2hr/"
       },
       {
-        name: "Marina Magalhães Duarte de Amorim",
+        name: "Marina Amorim",
         role: "Head of Marketing and Sales",
         company: "B2HR",
         content: "Since she arrived in the T&D area, Hellora has already made important contributions, such as building the values and purpose of the T&D area, understanding the PDL product, building materials for commercial proposals, materials for research and organizing PDL involvement.",
