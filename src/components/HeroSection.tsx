@@ -1,7 +1,6 @@
 import image_25ab1fcd235fddec490acb55278383b3eeffa2a0 from "figma:asset/25ab1fcd235fddec490acb55278383b3eeffa2a0.png";
 import image_8b48844947ed81bcd09f80fa31869d5ad5f28d58 from "figma:asset/8b48844947ed81bcd09f80fa31869d5ad5f28d58.png";
 import image_73ea124db1a8b1b990710e2802e91a80c5cdcc63 from "figma:asset/73ea124db1a8b1b990710e2802e91a80c5cdcc63.png";
-import image_8b48844947ed81bcd09f80fa31869d5ad5f28d58 from "figma:asset/8b48844947ed81bcd09f80fa31869d5ad5f28d58.png";
 import { motion } from "motion/react";
 import {
   ArrowRight,
@@ -191,7 +190,7 @@ export function HeroSection() {
                           },
                           {
                             icon: MessageCircle,
-                            href: "https://wa.me/5561999999999",
+                            href: "https://wa.me/5561996404389",
                             label: "WhatsApp",
                           },
                         ].map((social, index) => (

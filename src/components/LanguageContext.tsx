@@ -112,7 +112,7 @@ const translations = {
     
     // Hero Section
     'hero.available': 'Available for new challenges',
-    'hero.overline': 'UX/UI · GROWTH DESIGN · BUSINESS ALINGMENT',
+    'hero.overline': 'UX/UI · GROWTH DESIGN · BUSINESS ALIGNMENT',
     'hero.headline': 'UX Strategy, Content Design and Business Acumen. I am the focal point of transformation that translates business objectives and research insights into optimized end-to-end journeys and solutions focused on generating value. Data-informed and Agile performance.',
     'hero.main_title': 'T-shaped strategist:',
     'hero.description': 'Architect journeys and solutions focused on the user and business growth.',

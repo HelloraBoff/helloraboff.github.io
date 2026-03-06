@@ -19,15 +19,15 @@ const contactMethods = [
     icon: Mail,
     title: "Email",
     description: "Resposta em até 24h",
-    value: "contato@helloraboff.com",
-    action: () => window.open("mailto:contato@helloraboff.com", "_blank")
+    value: "helloraboff@gmail.com",
+    action: () => window.open("mailto:helloraboff@gmail.com", "_blank")
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
     description: "Resposta rápida",
-    value: "+55 (61) 99999-9999",
-    action: () => window.open("https://wa.me/5561999999999", "_blank")
+    value: "+55 (61) 99640-4389",
+    action: () => window.open("https://wa.me/5561996404389", "_blank")
   },
   {
     icon: MapPin,
@@ -51,7 +51,7 @@ const socialLinks = [
   },
   {
     name: "Medium",
-    url: "https://medium.com/@helloraboff",
+    url: "https://medium.com/@hellorabrito",
     description: "Leia meus artigos"
   }
 ];
@@ -446,7 +446,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-700 hover:to-fuchsia-700 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                  onClick={() => window.open("https://wa.me/5561999999999", "_blank")}
+                  onClick={() => window.open("https://wa.me/5561996404389", "_blank")}
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp direto

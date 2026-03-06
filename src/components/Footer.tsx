@@ -11,7 +11,7 @@ export function Footer() {
   };
 
   const openLinkedIn = () => {
-    window.open("https://linkedin.com/in/helloraboff", "_blank");
+    window.open("https://www.linkedin.com/in/helloraboff/", "_blank");
   };
 
   const openMedium = () => {
@@ -23,7 +23,7 @@ export function Footer() {
   };
 
   const openCurriculo = () => {
-    window.open("https://drive.google.com/file/d/your-resume-id/view", "_blank");
+    window.open("https://drive.google.com/file/d/1eI5QJbSvKvQiJyRn8A_sJ6Mf7N2Og8T/view?usp=sharing", "_blank");
   };
 
   return (
@@ -65,6 +65,7 @@ export function Footer() {
               <div className="flex items-center gap-4">
                 <motion.button
                   onClick={openLinkedIn}
+                  aria-label="LinkedIn"
                   className="p-3 rounded-xl glass-subtle hover:glass-strong border border-violet-500/20 hover:border-violet-400/40 text-gray-600 dark:text-violet-300 hover:text-white dark:hover:text-white linkedin-hover transition-all duration-500"
                   whileHover={{ 
                     scale: 1.08,
@@ -79,6 +80,7 @@ export function Footer() {
                 
                 <motion.button
                   onClick={openGitHub}
+                  aria-label="GitHub"
                   className="p-3 rounded-xl glass-subtle hover:glass-strong border border-violet-500/20 hover:border-violet-400/40 text-gray-600 dark:text-violet-300 hover:text-white dark:hover:text-white footer-gradient-hover transition-all duration-500"
                   whileHover={{ 
                     scale: 1.08,
@@ -93,8 +95,9 @@ export function Footer() {
 
                 <motion.button
                   onClick={openCurriculo}
+                  aria-label="Download CV"
                   className="p-3 rounded-xl glass-subtle hover:glass-strong border border-violet-500/20 hover:border-violet-400/40 text-gray-600 dark:text-violet-300 hover:text-white dark:hover:text-white footer-gradient-hover transition-all duration-500"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.08,
                     rotateY: 5,
                     boxShadow: "0 10px 25px rgba(153, 77, 255, 0.3)"
@@ -107,6 +110,7 @@ export function Footer() {
                 
                 <motion.button
                   onClick={openEmail}
+                  aria-label="Email"
                   className="p-3 rounded-xl glass-subtle hover:glass-strong border border-violet-500/20 hover:border-violet-400/40 text-gray-600 dark:text-violet-300 hover:text-white dark:hover:text-white footer-gradient-hover transition-all duration-500"
                   whileHover={{ 
                     scale: 1.08,
@@ -121,6 +125,7 @@ export function Footer() {
 
                 <motion.button
                   onClick={openMedium}
+                  aria-label="Medium"
                   className="p-3 rounded-xl glass-subtle hover:glass-strong border border-violet-500/20 hover:border-violet-400/40 text-gray-600 dark:text-violet-300 hover:text-white dark:hover:text-white footer-gradient-hover transition-all duration-500"
                   whileHover={{ 
                     scale: 1.08,

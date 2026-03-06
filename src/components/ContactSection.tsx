@@ -228,7 +228,7 @@ export function ContactSection() {
                 {/* Redes Sociais - DENTRO do card, abaixo da linha */}
                 <div className="flex items-center justify-start gap-4 pt-2 pr-[0px] pb-[0px] pl-[0px]">
                   <motion.a
-                    href="https://linkedin.com/in/helloraboff"
+                    href="https://www.linkedin.com/in/helloraboff/"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
@@ -260,7 +260,7 @@ export function ContactSection() {
                   </motion.a>
                   
                   <motion.a
-                    href="/cv-hellora-boff.pdf"
+                    href="https://drive.google.com/file/d/1eI5QJbSvKvQiJyRn8A_sJ6Mf7N2Og8T/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
